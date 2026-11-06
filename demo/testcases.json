@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://phptravels.com/demo",
+    "test": "Verify that customer demo credentials and admin demo access are listed on the page"
+  },
+  {
+    "url": "https://www.saucedemo.com",
+    "test": "Log in with username standard_user and password secret_sauce and verify the product inventory is shown"
+  },
+  {
+    "url": "https://the-internet.herokuapp.com/login",
+    "test": "Log in with username tomsmith and password SuperSecretPassword! and verify you logged into a secure area"
+  },
+  {
+    "url": "https://quotes.toscrape.com",
+    "test": "Verify quotes and tag navigation links are visible on the homepage"
+  },
+  {
+    "url": "https://the-internet.herokuapp.com/login",
+    "test": "Enter invalid credentials 'fakeuser' and 'badpass' and verify login error message is displayed"
+  }
+]
+

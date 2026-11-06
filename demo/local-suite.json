@@ -1,0 +1,15 @@
+[
+  {
+    "url": "./demo/local-demo.html",
+    "test": "Log in as a customer and verify the dashboard is shown"
+  },
+  {
+    "url": "./demo/local-demo.html",
+    "test": "Verify that customer demo credentials and demo box are listed on the page"
+  },
+  {
+    "url": "./demo/local-demo.html",
+    "test": "Verify that nonexistent secret dashboard error code 99999 is displayed on the page"
+  }
+]
+

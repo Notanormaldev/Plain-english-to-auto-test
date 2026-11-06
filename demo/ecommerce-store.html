@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SwiftGear Electronics Store</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 20px; background: #fafafa; }
+    header { display: flex; justify-content: space-between; align-items: center; background: #111; color: #fff; padding: 12px 24px; border-radius: 8px; }
+    .cart-badge { background: #e11d48; color: #fff; padding: 4px 8px; border-radius: 12px; font-weight: bold; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+    .card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 16px; }
+    button { background: #2563eb; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+    #cart-status { margin-top: 16px; padding: 12px; background: #dcfce7; color: #166534; display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>SwiftGear Electronics</h2>
+    <div>Shopping Cart: <span id="cart-count" class="cart-badge">0 items</span></div>
+  </header>
+
+  <div id="cart-status">Success: Wireless Noise-Cancelling Headphones added to cart!</div>
+
+  <div class="product-grid">
+    <div class="card">
+      <h3>Wireless Noise-Cancelling Headphones</h3>
+      <p>Premium studio quality sound with 40h battery life.</p>
+      <p><strong>$199.99</strong></p>
+      <button id="add-headphones" onclick="addToCart('Wireless Noise-Cancelling Headphones')">Add to Cart</button>
+    </div>
+    <div class="card">
+      <h3>Mechanical Gaming Keyboard</h3>
+      <p>RGB backlit tactile switches.</p>
+      <p><strong>$129.99</strong></p>
+      <button id="add-keyboard" onclick="addToCart('Mechanical Gaming Keyboard')">Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    let count = 0;
+    function addToCart(item) {
+      count++;
+      document.getElementById('cart-count').innerText = count + ' item' + (count > 1 ? 's' : '');
+      const status = document.getElementById('cart-status');
+      status.style.display = 'block';
+      status.innerText = 'Success: ' + item + ' added to cart!';
+    }
+  </script>
+</body>
+</html>
+

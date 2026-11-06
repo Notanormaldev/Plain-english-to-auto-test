@@ -1,0 +1,42 @@
+{
+  "name": "plain-english-to-auto-test",
+  "version": "1.0.0",
+  "description": "Autonomous AI-powered browser test runner that converts plain-English test cases into automated browser tests using Playwright.",
+  "main": "dist/index.js",
+  "bin": {
+    "auto-test": "./bin/run.js"
+  },
+  "scripts": {
+    "start": "tsx src/cli.ts",
+    "test:demo": "tsx src/cli.ts --url \"https://phptravels.com/demo\" --test \"Log in as a customer and verify the dashboard is shown\"",
+    "test:headed": "tsx src/cli.ts --url \"./demo/local-demo.html\" --test \"Log in as a customer and verify the dashboard is shown\" --headed --slowmo 600",
+    "test:local": "tsx src/cli.ts --url \"./demo/local-demo.html\" --test \"Log in as a customer and verify the dashboard is shown\"",
+    "test:suite": "tsx src/cli.ts --file demo/local-suite.json",
+    "test:multisite": "tsx src/cli.ts --file demo/testcases.json",
+    "build": "tsc"
+  },
+  "keywords": [
+    "playwright",
+    "ai-testing",
+    "nlp-testing",
+    "llm",
+    "qa-automation",
+    "autonomous-agent"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "latest",
+    "@types/node": "^22.10.1",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.7",
+    "openai": "^4.76.0",
+    "playwright": "^1.49.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "type": "module"
+}
