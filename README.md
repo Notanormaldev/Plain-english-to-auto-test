@@ -65,37 +65,115 @@
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start: Clone, Setup & Run
 
-### 1. Prerequisites
-- **Node.js** (v18 or higher recommended; v24 supported)
-- **pnpm** (or npm / yarn)
+Follow these step-by-step instructions to clone the repository, install dependencies, and run the tests.
 
-### 2. Installation
+---
 
-Clone this repository and install dependencies:
+### Step 1: Clone the Repository
+Clone the repository using Git and navigate into the project directory:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Notanormaldev/Plain-english-to-auto-test.git
 cd Plain-english-to-auto-test
+```
+
+---
+
+### Step 2: Prerequisites
+Ensure you have the following installed on your system:
+- **Node.js** (v18.0.0 or higher): [Download Node.js](https://nodejs.org/)
+- **pnpm** (recommended) or **npm** (comes bundled with Node.js)
+
+Verify installations in your terminal:
+```bash
+node --version
+npm --version
+```
+
+---
+
+### Step 3: Install Dependencies
+Install all project dependencies:
+
+**Using pnpm (recommended):**
+```bash
 pnpm install
+```
+
+**Using npm:**
+```bash
+npm install
+```
+
+---
+
+### Step 4: Install Playwright Chromium Browser
+Download the required Playwright Chromium browser binaries:
+
+**Using pnpm:**
+```bash
 pnpm exec playwright install chromium
 ```
 
-### 3. API Key Setup (Optional)
-
-The tool runs out-of-the-box using the built-in smart heuristic engine. To enable LLMs (Gemini / OpenAI), configure `.env`:
-
+**Using npx:**
 ```bash
-cp .env.example .env
+npx playwright install chromium
 ```
 
-Add your API key inside `.env`:
-```env
-LLM_PROVIDER=gemini
-GEMINI_API_KEY=your_gemini_api_key_here
+---
+
+### Step 5: Configure AI API Key (Optional)
+The runner includes an offline **Smart Heuristic Fallback Engine** that executes out-of-the-box with **zero API keys required**. 
+
+To enable cutting-edge LLMs (Google Gemini or OpenAI):
+1. Copy the example environment file:
+   ```bash
+   cp .env.example .env
+   ```
+2. Open `.env` and add your API key:
+   ```env
+   LLM_PROVIDER=gemini
+   GEMINI_API_KEY=your_gemini_api_key_here
+   ```
+   *(Or set `OPENAI_API_KEY=your_key_here` to use OpenAI).*
+
+---
+
+### Step 6: Run the Automated Tests
+
+#### Option A: Visible Interactive Headed Mode (Watch the Browser Live)
+Opens a visible browser with slow-motion execution so you can observe the AI interacting with the page:
+```bash
+pnpm run test:headed
 ```
-*(Or set `OPENAI_API_KEY=your_key_here` to use OpenAI).*
+*(or with npm: `npm run test:headed`)*
+
+#### Option B: Default PHPTravels Customer Login Test
+```bash
+pnpm run test:demo
+```
+*(or with npm: `npm run test:demo`)*
+
+#### Option C: Offline Local Demo Test (Instant Execution)
+```bash
+pnpm run test:local
+```
+*(or with npm: `npm run test:local`)*
+
+#### Option D: Multi-Test Batch Suite
+Executes a batch suite containing positive login tests, credential checks, and negative failure verification:
+```bash
+pnpm run test:suite
+```
+*(or with npm: `npm run test:suite`)*
+
+#### Option E: Run Any Custom Test on Any Custom Website
+```bash
+pnpm start --url "<any-website-url>" --test "<any-plain-english-test-instruction>"
+```
+*(or with npm: `npm start -- --url "<any-website-url>" --test "<any-plain-english-test-instruction>"`)*
 
 ---
 
